@@ -266,6 +266,9 @@ define network::interface (
   $arp             = undef,
   $nozeroconf      = undef,
   $linkdelay       = undef,
+  $team_master     = undef,
+  $team_port_cfg   = undef,
+  $team_cfg        = undef,
   $check_link_down = false,
 
   # RedHat specific for Open vSwitch

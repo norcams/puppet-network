@@ -136,6 +136,15 @@ OVSDHCPINTERFACES="<%= @ovsdhcpinterfaces %>"
 <% if @ovsrequries -%>
 OVSREQURIES="<%= @ovsrequries %>"
 <% end -%>
+<% if @team_master -%>
+TEAM_MASTER="<%= @team_master %>"
+<% end -%>
+<% if @team_port_config -%>
+TEAM_PORT_CONFIG="<%= @team_port_config %>"
+<% end -%>
+<% if @team_config -%>
+TEAM_CONFIG="<%= @team_config %>"
+<% end -%>
 <% if @check_link_down == true -%>
 check_link_down() {
    return 1;
