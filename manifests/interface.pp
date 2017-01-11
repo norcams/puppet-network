@@ -258,6 +258,7 @@ define network::interface (
   $type            = 'Ethernet',
   $ethtool_opts    = undef,
   $ipv6init        = undef,
+  $ipv6addr        = undef,
   $dhcp_hostname   = undef,
   $srcaddr         = undef,
   $peerdns         = '',

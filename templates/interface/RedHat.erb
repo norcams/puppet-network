@@ -30,6 +30,9 @@ IPADDR<%= id %>="<%= @ipaddress[id-1] %>"
 IPADDR="<%= @manage_ipaddr %>"
 <% end -%>
 <% end -%>
+<% if @ipv6addr -%>
+IPV6ADDR="<%= @ipv6addr %>"
+<% end -%>
 <% if @netmask -%>
 NETMASK="<%= @netmask %>"
 <% end -%>
