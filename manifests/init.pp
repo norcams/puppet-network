@@ -260,8 +260,8 @@ class network (
 
   # Configure sysconfig/network (On RedHat).
   if $::osfamily == 'RedHat'
-    and $network::gateway
-    or ($network::hostname
+    and ($network::gateway
+    or $network::hostname
     or $network::ipv6enable
     or $network::nozeroconf) {
     file { '/etc/sysconfig/network':
