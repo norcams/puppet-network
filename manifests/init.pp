@@ -113,29 +113,29 @@ class network (
   # Hiera import
 
   if( $hiera_merge == true ) {
-    $hiera_interfaces_hash = hiera_hash("${module_name}::interfaces_hash",undef)
+    $hiera_interfaces_hash = lookup("${module_name}::interfaces_hash", Hash, 'deep', )
     $real_interfaces_hash = $hiera_interfaces_hash ? {
       undef   => $interfaces_hash,
       default => $hiera_interfaces_hash,
     }
 
-    $hiera_routes_hash = hiera_hash('network::routes_hash',undef)
+    $hiera_routes_hash = lookup("${module_name}::routes_hash", Hash, 'deep', {} )
     $real_routes_hash = $hiera_routes_hash ? {
       undef   => $routes_hash,
       default => $hiera_routes_hash,
     }
 
-    $hiera_mroutes_hash = hiera_hash('network::mroutes_hash',undef)
+    $hiera_mroutes_hash = lookup("${module_name}::mroutes_hash", Hash, 'deep', {} )
     $real_mroutes_hash = $hiera_mroutes_hash ? {
       undef   => $mroutes_hash,
       default => $hiera_mroutes_hash,
     }
-    $hiera_rules_hash = hiera_hash('network::rules_hash',undef)
+    $hiera_rules_hash = lookup('network::rules_hash', Hash, 'deep', {} )
     $real_rules_hash = $hiera_rules_hash ? {
       undef   => $rules_hash,
       default => $hiera_rules_hash,
     }
-    $hiera_tables_hash = hiera_hash('network::tables_hash',undef)
+    $hiera_tables_hash = lookup('network::tables_hash', Hash, 'deep', {} )
     $real_tables_hash = $hiera_tables_hash ? {
       undef   => $tables_hash,
       default => $hiera_tables_hash,
