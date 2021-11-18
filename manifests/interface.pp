@@ -597,7 +597,7 @@ define network::interface (
     undef => $::operatingsystem ? {
         'CumulusLinux' => 'ifreload -a',
         'RedHat'       => $::operatingsystemmajrelease ? {
-          '8'     => '/usr/bin/systemctl restart NetworkManager',
+          '8'     => '/usr/bin/sudo /usr/bin/systemctl restart NetworkManager',
           default => "ifdown ${interface} --force ; ifup ${interface}",
         },
         default        => "ifdown ${interface} --force ; ifup ${interface}",
