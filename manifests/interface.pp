@@ -597,7 +597,7 @@ define network::interface (
     undef => $::operatingsystem ? {
         'CumulusLinux' => 'ifreload -a',
         'RedHat'       => $::operatingsystemmajrelease ? {
-          '8'     => '/usr/bin/sudo nmcli device reapply ${interface}',
+          '8'     => '/usr/bin/sudo /usr/bin/nmcli device reapply ${interface}',
           default => "ifdown ${interface} --force ; ifup ${interface}",
         },
         default        => "ifdown ${interface} --force ; ifup ${interface}",
