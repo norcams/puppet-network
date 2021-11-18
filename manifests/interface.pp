@@ -596,7 +596,11 @@ define network::interface (
   $real_reload_command = $reload_command ? {
     undef => $::operatingsystem ? {
         'CumulusLinux' => 'ifreload -a',
-        default        => "ifdown ${interface}; ifup ${interface}",
+        'RedHat'       => $::operatingsystemmajrelease ? {
+          '8'     => "/usr/bin/nmcli con reload ; /usr/bin/nmcli device reapply ${interface}",
+          default => "ifdown ${interface} --force ; ifup ${interface}",
+        },
+        default        => "ifdown ${interface} --force ; ifup ${interface}",
       },
     default => $reload_command,
   }
