@@ -113,7 +113,7 @@ class network (
   # Hiera import
 
   if( $hiera_merge == true ) {
-    $hiera_interfaces_hash = lookup("${module_name}::interfaces_hash", Hash, 'deep', )
+    $hiera_interfaces_hash = lookup("${module_name}::interfaces_hash", Hash, 'deep', {} )
     $real_interfaces_hash = $hiera_interfaces_hash ? {
       undef   => $interfaces_hash,
       default => $hiera_interfaces_hash,
