@@ -2,6 +2,6 @@
 ### File managed by Puppet
 ###
 <%- (0..(@iprule.length-1)).each do |id| -%>
-<%- if @family and @family[id] != 'inet6' -%>
+<%- if @family and @family[id] == 'inet6' -%>
 <%= @iprule[id] %>
 <% end -%><% end -%>
