@@ -113,31 +113,31 @@ define network::route (
   $ensure    = 'present'
 ) {
   # Validate our arrays
-  validate_array($ipaddress)
-  validate_array($netmask)
+  validate_legacy(Array, 'validate_array', $ipaddress)
+  validate_legacy(Array, 'validate_array', $netmask)
 
   if $gateway {
-    validate_array($gateway)
+    validate_legacy(Array, 'validate_array', $gateway)
   }
 
   if $metric {
-    validate_array($metric)
+    validate_legacy(Array, 'validate_array', $metric)
   }
 
   if $scope {
-    validate_array($scope)
+    validate_legacy(Array, 'validate_array', $scope)
   }
 
   if $source {
-    validate_array($source)
+    validate_legacy(Array, 'validate_array', $source)
   }
 
   if $table {
-    validate_array($table)
+    validate_legacy(Array, 'validate_array', $table)
   }
 
   if $family {
-    validate_array($family)
+    validate_legacy(Array, 'validate_array', $family)
   }
 
   include ::network
