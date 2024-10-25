@@ -13,3 +13,25 @@ IPV6INIT="<%= @ipv6enable %>"
 <% if @hostname -%>
 HOSTNAME="<%= @hostname %>"
 <% end -%>
+<% if @manage_networking_ipv6 -%>
+NETWORKING_IPV6="<%= @manage_networking_ipv6 %>"
+<% end -%>
+<% if @manage_ipv6forwarding -%>
+IPV6FORWARDING="<%= @manage_ipv6forwarding %>"
+<% end -%>
+<% if @manage_ipv6_autoconf -%>
+IPV6_AUTOCONF="<%= @manage_ipv6_autoconf %>"
+<% end -%>
+<% if @manage_ipv6_autotunnel -%>
+IPV6_AUTOTUNNEL="<%= @manage_ipv6_autotunnel %>"
+<% end -%>
+<% if @manage_ipv6_defaultgw -%>
+IPV6_DEFAULTGW="<%= @manage_ipv6_defaultgw %>"
+<% end -%>
+<% if @manage_ipv6_radvd_pidfile -%>
+IPV6_RADVD_PIDFILE="<%= @manage_ipv6_radvd_pidfile %>"
+<% end -%>
+<% if @vlan -%>VLAN="<%= @vlan %>"
+<% end -%>
+<% if @res_options -%>RES_OPTIONS="<%= @res_options %>"
+<% end -%>
